@@ -1,0 +1,15 @@
+@import "./reset.css";
+@import "./components/buttons.css";
+@import "./components/navbar.css";
+
+@import "./reset.css";
+
+
+body{
+    background-color: black;
+}
+
+img{
+    height: 80vh;
+    width: 100vw;
+}
