@@ -1,0 +1,89 @@
+// Primary Colors
+
+$primary: #0C0820;
+$secondary: #005FF2;
+$third: #3D9A3A;
+
+
+// Background Colors
+$bg-1: #F9F8FC;
+$bg-2: #EEF1FB;
+$bg-3: #E9F2FF;
+$bg-4: #FFE9F3;
+
+// Other Colors
+$border: #E1E1E1;
+$white: #FFFFFF;
+
+// Global Utility Classes
+.primary { background-color: $primary; color: $white; }
+.secondary { background-color: $secondary; color: $white; }
+.third { background-color: $third; color: $white; }
+
+.bg-1 { background-color: $bg-1; }
+.bg-2 { background-color: $bg-2; }
+.bg-3 { background-color: $bg-3; }
+.bg-4 { background-color: $bg-4; }
+
+.border { border: 1px solid $border; }
+.text-primary { color: $primary; }
+.text-secondary { color: $secondary; }
+.text-third { color: $third; }
+
+.headline-20 { font-size: 20px; line-height: 28px; font-weight: 400; }
+.headline-20.medium { font-weight: 500; }
+.headline-20.bold { font-weight: 700; }
+
+.headline-30 { font-size: 30px; line-height: 38px; font-weight: 400; }
+.headline-30.medium { font-weight: 500; }
+.headline-30.bold { font-weight: 700; }
+
+.headline-52 { font-size: 52px; line-height: 60px; font-weight: 400; }
+.headline-52.medium { font-weight: 500; }
+.headline-52.bold { font-weight: 700; }
+
+.headline-70 { font-size:70px; line-height: 80px; font-weight: 400; }
+.headline-70.medium { font-weight: 500; }
+.headline-70.bold { font-weight: 700; }
+
+.text-14-24 { font-size: 14px; line-height: 24px; font-weight: 400; }
+.text-14-24.medium { font-weight: 500; }
+
+.text-15-26 { font-size: 15px; line-height: 26px; font-weight: 400; }
+.text-15-26.medium { font-weight: 500; }
+
+.text-16-28 { font-size: 16px; line-height: 28px; font-weight: 400; }
+.text-16-28.medium { font-weight: 500; }
+
+.text-18-32 { font-size: 18px; line-height: 32px; font-weight: 400; }
+.text-18-32.medium { font-weight: 500; }
+
+  
+.headline-20 { font-size: var(--size-h20); line-height: var(--line-h20); font-weight: var(--font-regular); }
+.headline-20.medium { font-weight: var(--font-medium); }
+.headline-20.bold { font-weight: var(--font-bold); }
+
+
+// :root {
+//     --font-regular: 400;
+//     --font-medium: 500;
+//     --font-bold: 700;
+  
+//     --size-h20: 20px;
+//     --size-h30: 30px;
+//     --size-h52: 52px;
+//     --size-h70: 70px;
+  
+//     --size-t14: 14px;
+//     --size-t16: 16px;
+//     --size-t18: 18px;
+  
+//     --line-h20: 28px;
+//     --line-h30: 38px;
+//     --line-h52: 60px;
+//     --line-h70: 80px;
+  
+//     --line-t14: 24px;
+//     --line-t16: 28px;
+//     --line-t18: 32px;
+//   }

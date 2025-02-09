@@ -1,0 +1,98 @@
+@use '../variables' as *;
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    padding: 0px 6rem;
+    background-color: $primary;
+    max-width: none;
+    box-sizing: content-box;
+    .newsletter{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 300px;
+        max-width: 1400px;
+        border-bottom: 2px solid hsla(0, 0%, 100%, 0.15);
+        .left{
+            display: flex;
+            max-width: 450px;
+            flex: 1;
+            flex-direction: column;
+             gap: 30px;
+             color: $white;
+        }
+        .left > span{
+            color: $white;
+            font-family: 'Bebas Neue';
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.75px;
+        }
+    
+        .left > .info-buttons{
+            display: flex;
+            gap: 20px;
+            button{
+                display: inline-flex;
+                padding: 8px 30px;
+                justify-content: center;
+                align-items: center;
+                background-color: transparent;
+                color: $white ;
+                gap: 10px;
+                border-radius: 60px;
+                border: 1px solid rgba(255, 255, 255, 0.20);
+            }
+        }
+
+
+        .right{
+            display: flex;
+            flex: 1;
+            max-width: 450px;
+            gap: 30px;
+            flex-direction: column;
+            color: $white;
+        }
+        .right > .text-gap{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+      
+        .right > .newsLetter-form{
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            
+        }
+        .right > .newsLetter-form >input{
+            border-radius: 16px;
+            padding: 20px 26px;
+            opacity: 0.07;
+            background: var(--White, #FFF);
+          
+        }
+   
+    }
+
+
+
+
+
+
+
+
+    .copyright{
+        color: $white;
+    }
+    
+}
+
