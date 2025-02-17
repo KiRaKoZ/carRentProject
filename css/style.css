@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "/css/fonts.css";
 @import "/css/reset.css";
 .primary {
@@ -163,10 +164,10 @@ header {
   padding: 0rem 3rem;
   display: inline-flex;
   justify-content: space-between;
+  transition: background-color 0.3s ease-in-out;
   height: 100px;
-  background-color: #0C0820;
-  color: #FFFFFF;
   align-items: center;
+  z-index: 100;
 }
 header .left {
   display: flex;
@@ -298,6 +299,16 @@ header .right .lang-btn:hover {
   border-radius: 8px;
 }
 
+header.transparent {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+/* Non-transparent header when scrolled */
+header.scrolled {
+  background-color: #0C0820;
+}
+
 .primary-button {
   display: inline-flex;
   padding: 20px 26px;
@@ -413,6 +424,77 @@ footer .newsletter .right > .newsLetter-form > input {
 }
 footer .copyright {
   color: #FFFFFF;
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; /* სურათი შეავსებს კონტეინერს, გაიჭრება საჭიროების მიხედვით */
+  object-position: center; /* დარწმუნდებით რომ სურათის ცენტრი იქნება გამართული */
+  filter: brightness(60%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+/* Navigation dots */
+/* Navigation buttons (Prev/Next) */
+.slider-button button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+}
+.slider-button .prev {
+  left: 10px;
+}
+.slider-button .next {
+  right: 10px;
+}
+.slider-button button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.slider-button .nav-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.slider-button .nav-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  border: none;
+  cursor: pointer;
+  transition: width 0.3s, background-color 0.3s;
+}
+.slider-button .nav-btn.active {
+  width: 20px; /* Active state: wider border */
+  background-color: #333;
 }
 
 /*# sourceMappingURL=style.css.map */
