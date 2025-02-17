@@ -6,10 +6,12 @@ header{
   padding: 0rem 3rem;
   display: inline-flex;
   justify-content: space-between;
+  transition: background-color 0.3s ease-in-out;
   height: 100px;
-  background-color: $primary;
-  color: $white;
+  // background-color: $primary;
+  // color: $white;
   align-items: center;
+  z-index: 100;
   
   .left{
     display: flex;
@@ -160,4 +162,12 @@ header{
 }
 }
 
+header.transparent {
+  background-color: transparent;
+  color: $white;
+}
 
+/* Non-transparent header when scrolled */
+header.scrolled {
+  background-color: $primary;
+}
