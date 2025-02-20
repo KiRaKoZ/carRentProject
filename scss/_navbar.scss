@@ -8,8 +8,6 @@ header{
   justify-content: space-between;
   transition: background-color 0.3s ease-in-out;
   height: 100px;
-  // background-color: $primary;
-  // color: $white;
   align-items: center;
   z-index: 100;
   
@@ -170,5 +168,6 @@ header.transparent {
 
 /* Non-transparent header when scrolled */
 header.scrolled {
-  background-color: $primary;
+  background-color: #0c082087;
+  backdrop-filter: blur(7.5px);
 }

@@ -18,7 +18,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to bottom, rgba(12, 8, 32, 0.309), rgba(12, 8, 32, 0.302), rgba(12, 8, 32, 0.257));
+        background: linear-gradient(to bottom, rgba(12, 8, 32, 0.309), rgba(12, 8, 32, 0.526));
       }
       
    
@@ -26,15 +26,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 12rem 6rem 0rem 12rem;
+        padding: 8rem 3rem 0rem 12rem;
       
         .slider-left{
             display: flex;
             flex-direction: column;
             max-width: 400px;
-            gap: 2rem;
+            gap: 3rem;
             color: $white;
-     
+            backdrop-filter: blur(1.5px);
+            border-radius: 30px;
             .slider-top-info span:nth-child(1){
                 font-size: 40px;
                 font-style: normal;
@@ -54,7 +55,7 @@
             flex-direction: column;
             width: 16rem;
             max-width: 360px;
-            gap: 2rem;
+            gap: 3rem;
             border-radius: 16px;
             background: rgba(255, 255, 255, 0.10);
             backdrop-filter: blur(7.5px);
@@ -87,7 +88,7 @@
 
     .nav-buttons {
         position: absolute;
-        bottom: 4rem;
+        bottom: 5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -125,97 +126,55 @@
    
 }
 
+.home-section{
+    height: 100%;
+    width: 100vw;
+    .body-style-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        padding: 3rem 12rem 3rem 12rem;
 
+    }
+    .image-list {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+      }
+      
+      .image-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 8rem;
+        flex: 1;
+        max-width: 300px;
+        justify-content: flex-end;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        border-radius: 30px;
+        img{
+            width: 10rem;
+            background-size: cover;
+            background-position: center;
+            transition: 0.3s ease-in-out;
 
+        }
+      }
+      .image-list li > img:hover{
+        transform: scale(1.3); 
+      }
 
+    //   .image-list li:nth-child(1) { background-image: url('/assets/images/body-type-sedan.png'); }
+    //   .image-list li:nth-child(2) { background-image: url('/assets/images/body-type-coupe.png'); }
+    //   .image-list li:nth-child(3) { background-image: url('/assets/images/body-type-suv.png'); }
+    //   .image-list li:nth-child(4) { background-image: url('/assets/images/body-type-truck.png'); }
+    //   .image-list li:nth-child(5) { background-image: url('/assets/images/body-type-hatchback.png'); }
+    //   .image-list li:nth-child(6) { background-image: url('/assets/images/body-type-minivan.png'); }
 
-
-
-// .slider {
-//     position: relative;
-//     height: 100vh;
-//     width: 100%;
-//     overflow: hidden;
-// }
-
-// .slides {
-//     display: flex;
-//     transition: transform 0.5s ease-in-out;
-// }
-
-// .slide {
-//     min-width: 100%;
-//     transition: opacity 1s ease-in-out;
-// }
-
-// .slide{
-//     img {
-//         width: 100%;
-//         height: 100vh;
-//         object-fit: cover; /* სურათი შეავსებს კონტეინერს, გაიჭრება საჭიროების მიხედვით */
-//         object-position: center; /* დარწმუნდებით რომ სურათის ცენტრი იქნება გამართული */
-//         filter: brightness(60%); 
-//         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-//     }
-// }
-
-
-
-// /* Navigation dots */
-
-
-// /* Navigation buttons (Prev/Next) */
-
-
-// .slider-button{
-//     button {
-//         position: absolute;
-//         top: 50%;
-//         transform: translateY(-50%);
-//         background-color: rgba(0, 0, 0, 0.5);
-//         color: white;
-//         border: none;
-//         padding: 10px;
-//         cursor: pointer;
-//         z-index: 10;
-//         font-size: 24px;
-//     }
-//     .prev {
-//         left: 10px;
-//     }
-    
-//     .next {
-//         right: 10px;
-//     }
-
-//     button:hover {
-//         background-color: rgba(0, 0, 0, 0.8);
-//     }
- 
-//     .nav-dots {
-//         position: absolute;
-//         bottom: 10px;
-//         left: 50%;
-//         transform: translateX(-50%);
-//         display: flex;
-//         gap: 10px;
-//     }
-    
-//     .nav-btn {
-//         width: 10px;
-//         height: 10px;
-//         border-radius: 50%;
-//         background-color: #bbb;
-//         border: none;
-//         cursor: pointer;
-//         transition: width 0.3s, background-color 0.3s;
-//     }
-    
-//     .nav-btn.active {
-//         width: 20px; /* Active state: wider border */
-//         background-color: #333;
-//     }
-
-// }
-
+}
 

@@ -316,7 +316,8 @@ header.transparent {
 
 /* Non-transparent header when scrolled */
 header.scrolled {
-  background-color: #0C0820;
+  background-color: rgba(12, 8, 32, 0.5294117647);
+  backdrop-filter: blur(7.5px);
 }
 
 .primary-button {
@@ -454,20 +455,22 @@ footer .copyright {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(12, 8, 32, 0.309), rgba(12, 8, 32, 0.302), rgba(12, 8, 32, 0.257));
+  background: linear-gradient(to bottom, rgba(12, 8, 32, 0.309), rgba(12, 8, 32, 0.526));
 }
 .slider .slider-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12rem 6rem 0rem 12rem;
+  padding: 8rem 3rem 0rem 12rem;
 }
 .slider .slider-info .slider-left {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  gap: 2rem;
+  gap: 3rem;
   color: #FFFFFF;
+  backdrop-filter: blur(1.5px);
+  border-radius: 30px;
 }
 .slider .slider-info .slider-left .slider-top-info span:nth-child(1) {
   font-size: 40px;
@@ -486,7 +489,7 @@ footer .copyright {
   flex-direction: column;
   width: 16rem;
   max-width: 360px;
-  gap: 2rem;
+  gap: 3rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(7.5px);
@@ -512,7 +515,7 @@ footer .copyright {
 }
 .slider .nav-buttons {
   position: absolute;
-  bottom: 4rem;
+  bottom: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -542,6 +545,47 @@ footer .copyright {
 .slider .nav-bullet.active {
   width: 30px;
   background-color: white;
+}
+
+.home-section {
+  height: 100%;
+  width: 100vw;
+}
+.home-section .body-style-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 12rem 3rem 12rem;
+}
+.home-section .image-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+.home-section .image-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 8rem;
+  flex: 1;
+  max-width: 300px;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-radius: 30px;
+}
+.home-section .image-list li img {
+  width: 10rem;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease-in-out;
+}
+.home-section .image-list li > img:hover {
+  transform: scale(1.3);
 }
 
 /*# sourceMappingURL=style.css.map */
