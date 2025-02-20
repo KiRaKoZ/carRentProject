@@ -1,52 +1,56 @@
-function initSlider() {
-    let currentIndex = 0; // Local variable to track the current slide index
+const images = [
+    { src: '/assets/images/car1.png', info: 'Car Model: Volvo XC90', },
+    { src: '/assets/images/car2.png', info: 'Car Model: BMW X5' },
+    { src: '/assets/images/car3.png', info: 'Car Model: Audi Q7' }
+];
 
-    const slides = document.querySelectorAll('.slide');
-    const navBtns = document.querySelectorAll('.nav-btn');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
+let index = 0;
+let autoSlideInterval;
+const slide = document.getElementById('slide');
+// const info = document.getElementById('info');
+const bulletsContainer = document.getElementById('bullets');
 
-    if (!slides.length || !prevBtn || !nextBtn || !navBtns.length) return;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === index ? 'block' : 'none';
+function createBullets() {
+    bulletsContainer.innerHTML = '';
+    images.forEach((_, i) => {
+        const bullet = document.createElement('div');
+        bullet.classList.add('nav-bullet');
+        bullet.addEventListener('click', () => {
+            index = i; 
+            updateSlide();
+            resetAutoSlide();
         });
-
-        // Update active navigation button
-        navBtns.forEach((btn, i) => {
-            btn.classList.toggle('active', i === index);
-        });
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-    }
-
-    // Add click event listeners for navigation dots
-    navBtns.forEach((btn) => {
-        btn.addEventListener('click', function () {
-            const index = parseInt(this.dataset.slide);
-            currentIndex = index;
-            showSlide(currentIndex);
-        });
+        bulletsContainer.appendChild(bullet);
     });
-
-    prevBtn.addEventListener("click", prevSlide);
-    nextBtn.addEventListener("click", nextSlide);
-
-    // Auto-slide every 3 seconds
-    setInterval(nextSlide, 3000);
-
-    // Initialize the first slide
-    showSlide(currentIndex);
 }
 
-// Initialize the slider only once
-initSlider();
+function updateBullets() {
+    document.querySelectorAll('.nav-bullet').forEach((bullet, i) => {
+        bullet.classList.toggle('active', i === index);
+    });
+}
+
+function updateSlide() {
+    slide.style.backgroundImage = `url(${images[index].src})`;
+    // info.textContent = images[index].info;
+    updateBullets();
+}
+
+function changeSlide(direction) {
+    index = (index + direction + images.length) % images.length;
+    updateSlide();
+    resetAutoSlide();
+}
+
+function autoSlide() {
+    changeSlide(1);
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(autoSlide, 8000);
+}
+
+createBullets();
+updateSlide(); 
+autoSlideInterval = setInterval(autoSlide, 8000);

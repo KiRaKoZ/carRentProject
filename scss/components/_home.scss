@@ -1,91 +1,221 @@
 @use '../variables' as *;
 
-
-.slider {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-.slides {
+.home-container{
     display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide{
-    img {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover; /* სურათი შეავსებს კონტეინერს, გაიჭრება საჭიროების მიხედვით */
-        object-position: center; /* დარწმუნდებით რომ სურათის ცენტრი იქნება გამართული */
-        filter: brightness(60%); 
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-    }
+    flex-direction: column;
+    width: 100%;
 }
 
 
-
-/* Navigation dots */
-
-
-/* Navigation buttons (Prev/Next) */
-
-
-.slider-button{
-    button {
+.slider{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    .slider-info::before {
+        content: "";
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 10;
-        font-size: 24px;
-    }
-    .prev {
-        left: 10px;
-    }
-    
-    .next {
-        right: 10px;
-    }
-
-    button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
- 
-    .nav-dots {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(12, 8, 32, 0.309), rgba(12, 8, 32, 0.302), rgba(12, 8, 32, 0.257));
+      }
+      
+   
+    .slider-info{
         display: flex;
-        gap: 10px;
-    }
-    
-    .nav-btn {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #bbb;
-        border: none;
-        cursor: pointer;
-        transition: width 0.3s, background-color 0.3s;
-    }
-    
-    .nav-btn.active {
-        width: 20px; /* Active state: wider border */
-        background-color: #333;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12rem 6rem 0rem 12rem;
+      
+        .slider-left{
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            gap: 2rem;
+            color: $white;
+     
+            .slider-top-info span:nth-child(1){
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 45px;
+            }   
+            .slider-top-info span:nth-child(3){
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 30px;
+            }   
+        
+        }
+        .slider-right{
+            display: flex;
+            flex-direction: column;
+            width: 16rem;
+            max-width: 360px;
+            gap: 2rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(7.5px);
+            padding: 3rem ;
+
+            .car-info{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                height: 100%;
+                gap: 0.5rem;
+                color: $white;
+                .car-info-text{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem;
+                }
+                
+            }
+
+            .white{
+                background: $white !important; 
+                color: $primary;
+            }
+        
+        }
+  
     }
 
+    .nav-buttons {
+        position: absolute;
+        bottom: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav-arrows {
+        cursor: pointer;
+        width: 60px;
+        height: 40px;
+        border-radius: 30px;
+        border: 1px solid $white;
+        background-color: transparent;
+        color: $white;
+    }
+
+    .nav-bullets {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .nav-bullet {
+        height: 3px;
+        width: 15px;
+        border-radius: 10px;
+        background-color: $white;
+        transition: width 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .nav-bullet.active {
+        width: 30px;
+        background-color: white;
+    }
+   
 }
+
+
+
+
+
+
+
+// .slider {
+//     position: relative;
+//     height: 100vh;
+//     width: 100%;
+//     overflow: hidden;
+// }
+
+// .slides {
+//     display: flex;
+//     transition: transform 0.5s ease-in-out;
+// }
+
+// .slide {
+//     min-width: 100%;
+//     transition: opacity 1s ease-in-out;
+// }
+
+// .slide{
+//     img {
+//         width: 100%;
+//         height: 100vh;
+//         object-fit: cover; /* სურათი შეავსებს კონტეინერს, გაიჭრება საჭიროების მიხედვით */
+//         object-position: center; /* დარწმუნდებით რომ სურათის ცენტრი იქნება გამართული */
+//         filter: brightness(60%); 
+//         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+//     }
+// }
+
+
+
+// /* Navigation dots */
+
+
+// /* Navigation buttons (Prev/Next) */
+
+
+// .slider-button{
+//     button {
+//         position: absolute;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         background-color: rgba(0, 0, 0, 0.5);
+//         color: white;
+//         border: none;
+//         padding: 10px;
+//         cursor: pointer;
+//         z-index: 10;
+//         font-size: 24px;
+//     }
+//     .prev {
+//         left: 10px;
+//     }
+    
+//     .next {
+//         right: 10px;
+//     }
+
+//     button:hover {
+//         background-color: rgba(0, 0, 0, 0.8);
+//     }
+ 
+//     .nav-dots {
+//         position: absolute;
+//         bottom: 10px;
+//         left: 50%;
+//         transform: translateX(-50%);
+//         display: flex;
+//         gap: 10px;
+//     }
+    
+//     .nav-btn {
+//         width: 10px;
+//         height: 10px;
+//         border-radius: 50%;
+//         background-color: #bbb;
+//         border: none;
+//         cursor: pointer;
+//         transition: width 0.3s, background-color 0.3s;
+//     }
+    
+//     .nav-btn.active {
+//         width: 20px; /* Active state: wider border */
+//         background-color: #333;
+//     }
+
+// }
 
 

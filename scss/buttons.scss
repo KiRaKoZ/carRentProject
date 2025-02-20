@@ -13,7 +13,9 @@
     transition: 0.3s ease-in-out;
     color: $white;
     cursor: pointer;
+    
 }
+
 
 .primary-button:hover{
     background: #4E6CFB;
@@ -22,17 +24,19 @@
 
 .primary-button:focus{
     transition: 0.3s ease-in-out;
-    border: 1px solid var(--Color-Secondary, #405FF2);
+    border: 1px solid var($secondary, #405FF2);
     background: var(--White, #FFF);
     color: $primary;
 }
 
 
 
+
+
 .primary-button:disabled{
     cursor: default;
     border-radius: 12px;
-    border: 1px solid var(--Color-Secondary, #405FF2);
+    border: 1px solid var($secondary, #405FF2);
     background: rgba(78, 108, 251, 0.07);
 }
 
