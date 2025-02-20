@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import "/css/fonts.css";
 @import "/css/reset.css";
 .primary {
@@ -144,6 +143,16 @@
   font-weight: 500;
 }
 
+.text-20-30 {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.text-20-30 .medium {
+  font-weight: 500;
+}
+
 .headline-20 {
   font-size: var(--size-h20);
   line-height: var(--line-h20);
@@ -199,6 +208,7 @@ header .middle nav ul {
   gap: 1rem;
 }
 header .middle nav ul li {
+  width: 120px;
   padding: 12px;
   border-radius: 50px;
   white-space: nowrap;
@@ -330,7 +340,7 @@ header.scrolled {
 
 .primary-button:focus {
   transition: 0.3s ease-in-out;
-  border: 1px solid var(--Color-Secondary, #405FF2);
+  border: 1px solid var(#005FF2, #405FF2);
   background: var(--White, #FFF);
   color: #0C0820;
 }
@@ -338,7 +348,7 @@ header.scrolled {
 .primary-button:disabled {
   cursor: default;
   border-radius: 12px;
-  border: 1px solid var(--Color-Secondary, #405FF2);
+  border: 1px solid var(#005FF2, #405FF2);
   background: rgba(78, 108, 251, 0.07);
 }
 
@@ -353,7 +363,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 900px;
-  padding: 0px 6rem;
+  padding: 0px 12rem;
   background-color: #0C0820;
   max-width: none;
   box-sizing: content-box;
@@ -426,75 +436,112 @@ footer .copyright {
   color: #FFFFFF;
 }
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .slider {
+  width: 100vw;
+  height: 100vh;
   position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
 }
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-  min-width: 100%;
-  transition: opacity 1s ease-in-out;
-}
-
-.slide img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover; /* სურათი შეავსებს კონტეინერს, გაიჭრება საჭიროების მიხედვით */
-  object-position: center; /* დარწმუნდებით რომ სურათის ცენტრი იქნება გამართული */
-  filter: brightness(60%);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-}
-
-/* Navigation dots */
-/* Navigation buttons (Prev/Next) */
-.slider-button button {
+.slider .slider-info::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  font-size: 24px;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(12, 8, 32, 0.309), rgba(12, 8, 32, 0.302), rgba(12, 8, 32, 0.257));
 }
-.slider-button .prev {
-  left: 10px;
-}
-.slider-button .next {
-  right: 10px;
-}
-.slider-button button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.slider-button .nav-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+.slider .slider-info {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rem 6rem 0rem 12rem;
 }
-.slider-button .nav-btn {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #bbb;
-  border: none;
+.slider .slider-info .slider-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 2rem;
+  color: #FFFFFF;
+}
+.slider .slider-info .slider-left .slider-top-info span:nth-child(1) {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 45px;
+}
+.slider .slider-info .slider-left .slider-top-info span:nth-child(3) {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+.slider .slider-info .slider-right {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  max-width: 360px;
+  gap: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(7.5px);
+  padding: 3rem;
+}
+.slider .slider-info .slider-right .car-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  gap: 0.5rem;
+  color: #FFFFFF;
+}
+.slider .slider-info .slider-right .car-info .car-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.slider .slider-info .slider-right .white {
+  background: #FFFFFF !important;
+  color: #0C0820;
+}
+.slider .nav-buttons {
+  position: absolute;
+  bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.slider .nav-arrows {
   cursor: pointer;
-  transition: width 0.3s, background-color 0.3s;
+  width: 60px;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  color: #FFFFFF;
 }
-.slider-button .nav-btn.active {
-  width: 20px; /* Active state: wider border */
-  background-color: #333;
+.slider .nav-bullets {
+  display: flex;
+  gap: 0.5rem;
+}
+.slider .nav-bullet {
+  height: 3px;
+  width: 15px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  transition: width 0.3s ease-in-out;
+  cursor: pointer;
+}
+.slider .nav-bullet.active {
+  width: 30px;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

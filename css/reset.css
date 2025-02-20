@@ -30,6 +30,8 @@ a{
 
 body {
 	line-height: 1;
+	font-family: 'DM Sans 9pt';
+    transition: font-family 0.3s ease-in-out; /* Smooth transition */
 }
 ol, ul {
 	list-style: none;
@@ -47,15 +49,6 @@ table {
 	border-spacing: 0;
 }
 
-.container{
-	box-sizing: border-box;
-	/* height: 2000px; */
-	background: var(--Bg-White, #FFF);
-	max-width: 1920px;
-	padding: 0rem 3rem;
-	transition: 0.5s ease-in-out;
-}
-body {
-	font-family: 'DM Sans 9pt';
-    transition: font-family 0.3s ease-in-out; /* Smooth transition */
+.uppercase{
+	font-feature-settings: "case" on;
 }
